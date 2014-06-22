@@ -8,7 +8,8 @@ class RecipeManager
     end
   end
 
-  def print_recipes(id = nil)
+  def print_recipes(user_name = nil, id = nil)
+    puts user_name if user_name
     if id
       print_recipe id
       return
