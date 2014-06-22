@@ -1,8 +1,11 @@
 require_relative 'Recipe'
 
 class RecipeManager
-  def initialize(recipe_data_yaml)
+  def initialize
     @recipes = []
+  end
+
+  def load_recipe_data(recipe_data_yaml)
     recipe_data_yaml['recipes'].each do |recipe_yaml|
       @recipes << Recipe.new(recipe_yaml)
     end
