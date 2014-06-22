@@ -1,11 +1,10 @@
 require 'yaml'
-require_relative 'lib/Recipe'
-
-path = File.join(__dir__, 'recipe.yml')
-
-recipes = YAML.load(open(path))["recipes"]
+require_relative 'lib/RecipeManager'
 
 #第一引数にはidの意味を持たせることとする
 id = ARGV[0]
 
-Recipe.new.put_recipe_name(recipes, id)
+recipe_path = File.join(__dir__, 'recipe.yml')
+manager = RecipeManager.new(YAML.load_file(recipe_path))
+
+manager.print_recipes id

@@ -1,0 +1,27 @@
+require_relative 'Recipe'
+
+class RecipeManager
+  def initialize(recipe_data_yaml)
+    @recipes = []
+    recipe_data_yaml['recipes'].each do |recipe_yaml|
+      @recipes << Recipe.new(recipe_yaml)
+    end
+  end
+
+  def print_recipes(id = nil)
+    if id
+      print_recipe id
+      return
+    end
+
+    @recipes.each do |recipe|
+      recipe.print
+    end
+  end
+
+  def print_recipe(id)
+    @recipes.each do |recipe|
+      recipe.print if recipe.id == id.to_i
+    end
+  end
+end
