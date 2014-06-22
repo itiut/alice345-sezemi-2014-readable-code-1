@@ -10,31 +10,30 @@ Ruby
 ruby app.rb
 ```
 
-###レシピの追加方法
+###レシピのデータ構造
 
-レシピのデータはyamlを使って管理しています． 
-杏仁豆腐のデータを追加したい場合には
+レシピのデータは`recipe.yml`というyamlを使って管理しています。
 
-```
+* `recipes`はレシピのハッシュの配列です。
+* レシピのハッシュは以下のフィールドからなります。
+  * `id`: レシピのid
+  * `name`: レシピ名
+  * `url`: レシピのURL
+
+具体的には以下のようになります。
+
+```yaml
 recipes:
-  - name: オムライス
-  - name: 杏仁豆腐
+  - id: 1
+    name: オムライス
+    url: http://cookpad.com/recipe/2653946
+  - id: 2
+    name: 親子丼
+    url:  http://cookpad.com/recipe/2657882
+  - id: 3
+    name: 杏仁豆腐
+    url:  http://cookpad.com/recipe/2654398
 ```
-
-```
-recipes:
-  - name: オムライス
-  - name: 親子丼
-  - name: 杏仁豆腐
-```
-
-のように
-
-```
-- name: レシピ名
-```
-
-として保存してください
 
 ###IDの指定方法
 第一引数にIDの数字を入力してください
