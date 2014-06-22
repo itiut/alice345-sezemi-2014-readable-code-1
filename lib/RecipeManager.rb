@@ -19,9 +19,9 @@ class RecipeManager
     end
   end
 
-  def print_recipe(id)
+  def print_recipe(recipe_id)
     @recipes.each do |recipe|
-      recipe.print if recipe.id == id.to_i
+      recipe.print if recipe.id == recipe_id.to_i
     end
   end
 end
