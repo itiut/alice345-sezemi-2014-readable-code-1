@@ -5,7 +5,7 @@ class Recipe
 
   def put_recipe_name(recipes)
     recipes.each do |recipe|
-      puts recipe["name"]
+      puts "#{recipe["id"]}:#{recipe["name"]}"
     end
   end
 end
