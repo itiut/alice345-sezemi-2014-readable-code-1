@@ -35,10 +35,21 @@ recipes:
     url:  http://cookpad.com/recipe/2654398
 ```
 
-###IDの指定方法
-第一引数にIDの数字を入力してください
+### 実行コマンド
 
-```
-ruby app.rb 2
-#=>2: 親子丼
+* 第1引数にはユーザー名を指定
+* 第2引数にはレシピidを指定
+  * id指定があれば、指定idのレシピのみ出力
+  * なければ、全てのレシピを出力
+
+```console
+$ ruby app.rb kou
+kou
+1: オムライス http://cookpad.com/recipe/2653946
+2: 親子丼 http://cookpad.com/recipe/2657882
+3: 杏仁豆腐 http://cookpad.com/recipe/2654398
+
+$ ruby app.rb kou 2
+kou
+2: 親子丼 http://cookpad.com/recipe/2657882
 ```
